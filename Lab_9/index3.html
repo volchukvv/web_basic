@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+   const car = {
+    speedometer: 0
+}
+
+Object.defineProperty(car, 'setSpeedometer', {
+    value: function(val) {
+        this.speedometer = val;
+        return this;
+    }
+});
+
+Object.defineProperty(car, 'getSpeedometer', {
+    value: function() {
+        return this.speedometer;
+    }
+});
+
+Object.defineProperty(car, 'clearSpeedometer', {
+    value: function() {
+        speedometer = 0;
+        return this;
+    }
+});
+
+
+car.setSpeedometer(100).clearSpeedometer().setSpeedometer(300);
+console.log(car.getSpeedometer());
+      </script>
+</body>
+</html>

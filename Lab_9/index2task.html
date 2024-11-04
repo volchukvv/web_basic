@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Car {
+    constructor(model) {
+        this.model = model;        
+        this.speedometer = 0;       
+    }
+    
+    accelerate(speed) {
+        this.speedometer += speed; 
+        console.log(`Швидкість автомобіля ${this.model}: ${this.speedometer} км/год`);
+    }
+
+    brake() {
+        this.speedometer = 0;      
+        console.log(`Автомобіль ${this.model} зупинився.`);
+    }
+}
+    </script>
+    <script>
+    class Engine {
+        constructor(power) {
+            this.power = power;      
+            this.isRunning = false;   
+        }
+        
+        start() {
+            this.isRunning = true;   
+            console.log(`Двигун потужністю ${this.power} к.с. запущений.`);
+        }
+    
+        stop() {
+            this.isRunning = false;  
+            console.log(`Двигун зупинено.`);
+        }
+    }
+    </script>
+    <script>
+        class Driver {
+    constructor(name, age) {
+        this.name = name;        
+        this.age = age;           
+    }
+    
+    drive(car, speed) {
+        if (car instanceof Car) {
+            car.accelerate(speed);    
+            console.log(`${this.name} керує автомобілем ${car.model} на швидкості ${car.speedometer} км/год.`);
+        } else {
+            console.log("Це не автомобіль.");
+        }
+    }
+
+    stopCar(car) {
+        if (car instanceof Car) {
+            car.brake();         
+            console.log(`${this.name} зупинив автомобіль ${car.model}.`);
+        }
+    }
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let lastTime = new Date().getTime();
+
+        while (true) {
+        const currentTime = new Date().getTime();
+    
+        if (currentTime > endTime) {
+            console.log("Час вийшов!");
+            break;
+        }
+    
+        if (currentTime - lastTime >= 1000) {
+            console.log(i);
+            i++;
+            lastTime = currentTime;
+        }
+    }
+    </script>
+   
+</body>
+</html>
